@@ -1,0 +1,18 @@
+{
+    "name": "borysewicz/lab-composer",
+    "type": "project",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Borysewicz\\LabComposer\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Kacper Borysewicz"
+        }
+    ],
+    "require": {
+        "monolog/monolog": "^3.4"
+    }
+}
