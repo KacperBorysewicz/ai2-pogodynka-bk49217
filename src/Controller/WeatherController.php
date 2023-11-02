@@ -17,10 +17,10 @@ class WeatherController extends AbstractController
 
     public function city(Location $location, MeasurementRepository $repository): Response
     {
-        $measurements = $repository->findByLocation($location);
+        $measurement = $repository->findByLocation($location);
         return $this->render('weather/city.html.twig', [
             'location' => $location,
-            'measurements' => $measurements,
+            'measurement' => $measurement,
         ]);
     }
 }

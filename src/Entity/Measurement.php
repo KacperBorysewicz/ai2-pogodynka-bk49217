@@ -4,6 +4,8 @@ namespace App\Entity;
 
 use App\Repository\MeasurementRepository;
 use Doctrine\DBAL\Types\Types;
+use App\Entity\Location;
+
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: MeasurementRepository::class)]
