@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="68824601-22c6-48ff-a460-10fd163c4763" name="Changes" comment="After lab-D">
+      <change afterPath="$PROJECT_DIR$/pogodynka/src/Service/WeatherUtil.php" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerConfigs">
+    <option name="configs">
+      <option value="$PROJECT_DIR$/pogodynka/composer.json" />
+    </option>
+  </component>
+  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+    <pharConfigPath>$PROJECT_DIR$/labA/composer.json</pharConfigPath>
+    <execution />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_COMMON_BRANCH" value="lab-d" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/pogodynka" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="I:\AI2-lab\php-8.2.10-nts-Win32-vs16-x64\php.exe">
+    <include_path>
+      <path value="$PROJECT_DIR$/labA/vendor/psr/log" />
+      <path value="$PROJECT_DIR$/labA/vendor/monolog/monolog" />
+      <path value="$PROJECT_DIR$/labA/vendor/composer" />
+      <path value="$PROJECT_DIR$/pogodynka/vendor/symfony/polyfill-intl-idn" />
+      <path value="$PROJECT_DIR$/pogodynka/vendor/nikic/php-parser" />
+      <path value="$PROJECT_DIR$/pogodynka/vendor/theseer/tokenizer" />
+      <path value="$PROJECT_DIR$/pogodynka/vendor/phpunit/php-timer" />
+      <path value="$PROJECT_DIR$/pogodynka/vendor/phpunit/phpunit" />
+      <path value="$PROJECT_DIR$/pogodynka/vendor/doctrine/lexer" />
+      <path value="$PROJECT_DIR$/pogodynka/vendor/masterminds/html5" />
+      <path value="$PROJECT_DIR$/pogodynka/vendor/webmozart/assert" />
+      <path value="$PROJECT_DIR$/pogodynka/vendor/myclabs/deep-copy" />
+      <path value="$PROJECT_DIR$/pogodynka/vendor/doctrine/instantiator" />
+      <path value="$PROJECT_DIR$/pogodynka/vendor/twig/twig" />
+      <path value="$PROJECT_DIR$/pogodynka/vendor/doctrine/event-manager" />
+      <path value="$PROJECT_DIR$/pogodynka/vendor/doctrine/deprecations" />
+      <path value="$PROJECT_DIR$/pogodynka/vendor/sebastian/diff" />
+      <path value="$PROJECT_DIR$/pogodynka/vendor/doctrine/dbal" />
+      <path value="$PROJECT_DIR$/pogodynka/vendor/twig/extra-bundle" />
+      <path value="$PROJECT_DIR$/pogodynka/vendor/sebastian/type" />
+      <path value="$PROJECT_DIR$/pogodynka/vendor/doctrine/orm" />
+      <path value="$PROJECT_DIR$/pogodynka/vendor/sebastian/lines-of-code" />
+      <path value="$PROJECT_DIR$/pogodynka/vendor/doctrine/cache" />
+      <path value="$PROJECT_DIR$/pogodynka/vendor/egulias/email-validator" />
+      <path value="$PROJECT_DIR$/pogodynka/vendor/doctrine/collections" />
+      <path value="$PROJECT_DIR$/pogodynka/vendor/sebastian/comparator" />
+      <path value="$PROJECT_DIR$/pogodynka/vendor/doctrine/doctrine-bundle" />
+      <path value="$PROJECT_DIR$/pogodynka/vendor/sebastian/object-enumerator" />
+      <path value="$PROJECT_DIR$/pogodynka/vendor/doctrine/sql-formatter" />
+      <path value="$PROJECT_DIR$/pogodynka/vendor/sebastian/exporter" />
+      <path value="$PROJECT_DIR$/pogodynka/vendor/doctrine/persistence" />
+      <path value="$PROJECT_DIR$/pogodynka/vendor/sebastian/code-unit" />
+      <path value="$PROJECT_DIR$/pogodynka/vendor/doctrine/migrations" />
+      <path value="$PROJECT_DIR$/pogodynka/vendor/sebastian/version" />
+      <path value="$PROJECT_DIR$/pogodynka/vendor/doctrine/inflector" />
+      <path value="$PROJECT_DIR$/pogodynka/vendor/sebastian/cli-parser" />
+      <path value="$PROJECT_DIR$/pogodynka/vendor/symfony/maker-bundle" />
+      <path value="$PROJECT_DIR$/pogodynka/vendor/symfony/doctrine-messenger" />
+      <path value="$PROJECT_DIR$/pogodynka/vendor/symfony/web-profiler-bundle" />
+      <path value="$PROJECT_DIR$/pogodynka/vendor/symfony/browser-kit" />
+      <path value="$PROJECT_DIR$/pogodynka/vendor/monolog/monolog" />
+      <path value="$PROJECT_DIR$/pogodynka/vendor/symfony/http-kernel" />
+      <path value="$PROJECT_DIR$/pogodynka/vendor/symfony/console" />
+      <path value="$PROJECT_DIR$/pogodynka/vendor/symfony/string" />
+      <path value="$PROJECT_DIR$/pogodynka/vendor/symfony/polyfill-intl-icu" />
+      <path value="$PROJECT_DIR$/pogodynka/vendor/symfony/messenger" />
+      <path value="$PROJECT_DIR$/pogodynka/vendor/symfony/notifier" />
+      <path value="$PROJECT_DIR$/pogodynka/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/pogodynka/vendor/symfony/yaml" />
+      <path value="$PROJECT_DIR$/pogodynka/vendor/symfony/twig-bridge" />
+      <path value="$PROJECT_DIR$/pogodynka/vendor/symfony/serializer" />
+      <path value="$PROJECT_DIR$/pogodynka/vendor/symfony/expression-language" />
+      <path value="$PROJECT_DIR$/pogodynka/vendor/symfony/dotenv" />
+      <path value="$PROJECT_DIR$/pogodynka/vendor/symfony/asset" />
+      <path value="$PROJECT_DIR$/pogodynka/vendor/symfony/process" />
+      <path value="$PROJECT_DIR$/pogodynka/vendor/psr/link" />
+      <path value="$PROJECT_DIR$/pogodynka/vendor/psr/clock" />
+      <path value="$PROJECT_DIR$/pogodynka/vendor/composer" />
+      <path value="$PROJECT_DIR$/pogodynka/vendor/phpstan/phpdoc-parser" />
+      <path value="$PROJECT_DIR$/pogodynka/vendor/psr/container" />
+      <path value="$PROJECT_DIR$/pogodynka/vendor/psr/log" />
+      <path value="$PROJECT_DIR$/pogodynka/vendor/psr/cache" />
+      <path value="$PROJECT_DIR$/pogodynka/vendor/psr/event-dispatcher" />
+      <path value="$PROJECT_DIR$/pogodynka/vendor/phpunit/php-text-template" />
+      <path value="$PROJECT_DIR$/pogodynka/vendor/phpunit/php-invoker" />
+      <path value="$PROJECT_DIR$/pogodynka/vendor/phpunit/php-file-iterator" />
+      <path value="$PROJECT_DIR$/pogodynka/vendor/phpunit/php-code-coverage" />
+      <path value="$PROJECT_DIR$/pogodynka/vendor/symfony/http-foundation" />
+      <path value="$PROJECT_DIR$/pogodynka/vendor/symfony/var-dumper" />
+      <path value="$PROJECT_DIR$/pogodynka/vendor/symfony/event-dispatcher" />
+      <path value="$PROJECT_DIR$/pogodynka/vendor/symfony/options-resolver" />
+      <path value="$PROJECT_DIR$/pogodynka/vendor/symfony/validator" />
+      <path value="$PROJECT_DIR$/pogodynka/vendor/symfony/dom-crawler" />
+      <path value="$PROJECT_DIR$/pogodynka/vendor/symfony/translation-contracts" />
+      <path value="$PROJECT_DIR$/pogodynka/vendor/symfony/framework-bundle" />
+      <path value="$PROJECT_DIR$/pogodynka/vendor/symfony/security-bundle" />
+      <path value="$PROJECT_DIR$/pogodynka/vendor/symfony/web-link" />
+      <path value="$PROJECT_DIR$/pogodynka/vendor/symfony/translation" />
+      <path value="$PROJECT_DIR$/pogodynka/vendor/symfony/service-contracts" />
+      <path value="$PROJECT_DIR$/pogodynka/vendor/symfony/http-client-contracts" />
+      <path value="$PROJECT_DIR$/pogodynka/vendor/symfony/routing" />
+      <path value="$PROJECT_DIR$/pogodynka/vendor/symfony/intl" />
+      <path value="$PROJECT_DIR$/pogodynka/vendor/symfony/finder" />
+      <path value="$PROJECT_DIR$/pogodynka/vendor/symfony/doctrine-bridge" />
+      <path value="$PROJECT_DIR$/pogodynka/vendor/symfony/monolog-bridge" />
+      <path value="$PROJECT_DIR$/pogodynka/vendor/symfony/polyfill-php83" />
+      <path value="$PROJECT_DIR$/pogodynka/vendor/symfony/http-client" />
+      <path value="$PROJECT_DIR$/pogodynka/vendor/symfony/config" />
+      <path value="$PROJECT_DIR$/pogodynka/vendor/symfony/phpunit-bridge" />
+      <path value="$PROJECT_DIR$/pogodynka/vendor/symfony/dependency-injection" />
+      <path value="$PROJECT_DIR$/pogodynka/vendor/symfony/polyfill-intl-normalizer" />
+      <path value="$PROJECT_DIR$/pogodynka/vendor/symfony/debug-bundle" />
+      <path value="$PROJECT_DIR$/pogodynka/vendor/symfony/security-http" />
+      <path value="$PROJECT_DIR$/pogodynka/vendor/symfony/mailer" />
+      <path value="$PROJECT_DIR$/pogodynka/vendor/symfony/mime" />
+      <path value="$PROJECT_DIR$/pogodynka/vendor/symfony/twig-bundle" />
+      <path value="$PROJECT_DIR$/pogodynka/vendor/symfony/filesystem" />
+      <path value="$PROJECT_DIR$/pogodynka/vendor/symfony/error-handler" />
+      <path value="$PROJECT_DIR$/pogodynka/vendor/doctrine/common" />
+      <path value="$PROJECT_DIR$/pogodynka/vendor/sebastian/recursion-context" />
+      <path value="$PROJECT_DIR$/pogodynka/vendor/doctrine/doctrine-migrations-bundle" />
+      <path value="$PROJECT_DIR$/pogodynka/vendor/sebastian/complexity" />
+      <path value="$PROJECT_DIR$/pogodynka/vendor/sebastian/code-unit-reverse-lookup" />
+      <path value="$PROJECT_DIR$/pogodynka/vendor/sebastian/global-state" />
+      <path value="$PROJECT_DIR$/pogodynka/vendor/sebastian/environment" />
+      <path value="$PROJECT_DIR$/pogodynka/vendor/sebastian/resource-operations" />
+      <path value="$PROJECT_DIR$/pogodynka/vendor/phpdocumentor/reflection-docblock" />
+      <path value="$PROJECT_DIR$/pogodynka/vendor/phar-io/manifest" />
+      <path value="$PROJECT_DIR$/pogodynka/vendor/phar-io/version" />
+      <path value="$PROJECT_DIR$/pogodynka/vendor/sebastian/object-reflector" />
+      <path value="$PROJECT_DIR$/pogodynka/vendor/symfony/clock" />
+      <path value="$PROJECT_DIR$/pogodynka/vendor/symfony/cache-contracts" />
+      <path value="$PROJECT_DIR$/pogodynka/vendor/phpdocumentor/reflection-common" />
+      <path value="$PROJECT_DIR$/pogodynka/vendor/phpdocumentor/type-resolver" />
+      <path value="$PROJECT_DIR$/pogodynka/vendor/symfony/cache" />
+      <path value="$PROJECT_DIR$/pogodynka/vendor/symfony/form" />
+      <path value="$PROJECT_DIR$/pogodynka/vendor/symfony/runtime" />
+      <path value="$PROJECT_DIR$/pogodynka/vendor/symfony/deprecation-contracts" />
+      <path value="$PROJECT_DIR$/pogodynka/vendor/symfony/var-exporter" />
+      <path value="$PROJECT_DIR$/pogodynka/vendor/symfony/css-selector" />
+      <path value="$PROJECT_DIR$/pogodynka/vendor/symfony/monolog-bundle" />
+      <path value="$PROJECT_DIR$/pogodynka/vendor/symfony/polyfill-intl-grapheme" />
+      <path value="$PROJECT_DIR$/pogodynka/vendor/symfony/event-dispatcher-contracts" />
+      <path value="$PROJECT_DIR$/pogodynka/vendor/symfony/property-access" />
+      <path value="$PROJECT_DIR$/pogodynka/vendor/symfony/property-info" />
+      <path value="$PROJECT_DIR$/pogodynka/vendor/symfony/security-core" />
+      <path value="$PROJECT_DIR$/pogodynka/vendor/symfony/flex" />
+      <path value="$PROJECT_DIR$/pogodynka/vendor/symfony/stopwatch" />
+      <path value="$PROJECT_DIR$/pogodynka/vendor/symfony/security-csrf" />
+      <path value="$PROJECT_DIR$/pogodynka/vendor/symfony/password-hasher" />
+    </include_path>
+  </component>
+  <component name="ProjectId" id="2Xcuny76meZp2tmhnElcptpDdUy" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;I:/AI2-lab/pogodynka/var/data.db&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="68824601-22c6-48ff-a460-10fd163c4763" name="Changes" comment="" />
+      <created>1698940859456</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1698940859456</updated>
+      <workItem from="1698940860538" duration="389000" />
+      <workItem from="1699535998261" duration="2258000" />
+      <workItem from="1699538669796" duration="2449000" />
+      <workItem from="1699705115333" duration="897000" />
+      <workItem from="1699706035447" duration="493000" />
+      <workItem from="1699713685403" duration="637000" />
+      <workItem from="1699970925246" duration="812000" />
+      <workItem from="1699976740663" duration="4012000" />
+      <workItem from="1700067613004" duration="8465000" />
+      <workItem from="1700077068753" duration="107000" />
+    </task>
+    <task id="LOCAL-00001" summary="After lab-D">
+      <option name="closed" value="true" />
+      <created>1698941196751</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1698941196751</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="main" />
+                </option>
+              </RecentGroup>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="After lab-D" />
+    <option name="LAST_COMMIT_MESSAGE" value="After lab-D" />
+  </component>
+</project>

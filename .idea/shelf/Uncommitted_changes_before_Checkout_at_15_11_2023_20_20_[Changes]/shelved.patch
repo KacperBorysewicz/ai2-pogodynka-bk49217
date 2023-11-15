@@ -1,0 +1,174 @@
+Index: pogodynka/src/Controller/MeasurementController.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?php\r\n\r\nnamespace App\\Controller;\r\n\r\nuse App\\Entity\\Measurement;\r\nuse App\\Entity\\Location;\r\nuse App\\Form\\MeasurementType;\r\nuse App\\Repository\\MeasurementRepository;\r\nuse Doctrine\\ORM\\EntityManagerInterface;\r\nuse Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController;\r\nuse Symfony\\Component\\HttpFoundation\\Request;\r\nuse Symfony\\Component\\HttpFoundation\\Response;\r\nuse Symfony\\Component\\Routing\\Annotation\\Route;\r\n\r\n#[Route('/measurement')]\r\nclass MeasurementController extends AbstractController\r\n{\r\n    #[Route('/', name: 'app_measurement_index', methods: ['GET'])]\r\n    public function index(MeasurementRepository $measurementRepository): Response\r\n    {\r\n        return $this->render('measurement/index.html.twig', [\r\n            'measurements' => $measurementRepository->findAll(),\r\n        ]);\r\n    }\r\n\r\n    #[Route('/new', name: 'app_measurement_new', methods: ['GET', 'POST'])]\r\n    public function new(Request $request, EntityManagerInterface $entityManager): Response\r\n    {\r\n        $measurement = new Measurement();\r\n        $form = $this->createForm(MeasurementType::class, $measurement,['validation_groups' => \"create\",]);\r\n        $form->handleRequest($request);\r\n\r\n        if ($form->isSubmitted() && $form->isValid()) {\r\n            $entityManager->persist($measurement);\r\n            $entityManager->flush();\r\n\r\n            return $this->redirectToRoute('app_measurement_index', [], Response::HTTP_SEE_OTHER);\r\n        }\r\n\r\n        return $this->render('measurement/new.html.twig', [\r\n            'measurement' => $measurement,\r\n            'form' => $form,\r\n        ]);\r\n    }\r\n\r\n    #[Route('/{id}', name: 'app_measurement_show', methods: ['GET'])]\r\n    public function show(Measurement $measurement): Response\r\n    {\r\n        return $this->render('measurement/show.html.twig', [\r\n            'measurement' => $measurement,\r\n        ]);\r\n    }\r\n\r\n    #[Route('/{id}/edit', name: 'app_measurement_edit', methods: ['GET', 'POST'])]\r\n    public function edit(Request $request, Measurement $measurement, EntityManagerInterface $entityManager): Response\r\n    {\r\n        $form = $this->createForm(MeasurementType::class, $measurement,['validation_groups' => \"edit\",]);\r\n        $form->handleRequest($request);\r\n\r\n        if ($form->isSubmitted() && $form->isValid()) {\r\n            $entityManager->flush();\r\n\r\n            return $this->redirectToRoute('app_measurement_index', [], Response::HTTP_SEE_OTHER);\r\n        }\r\n\r\n        return $this->render('measurement/edit.html.twig', [\r\n            'measurement' => $measurement,\r\n            'form' => $form,\r\n        ]);\r\n    }\r\n\r\n    #[Route('/{id}', name: 'app_measurement_delete', methods: ['POST'])]\r\n    public function delete(Request $request, Measurement $measurement, EntityManagerInterface $entityManager): Response\r\n    {\r\n        if ($this->isCsrfTokenValid('delete'.$measurement->getId(), $request->request->get('_token'))) {\r\n            $entityManager->remove($measurement);\r\n            $entityManager->flush();\r\n        }\r\n\r\n        return $this->redirectToRoute('app_measurement_index', [], Response::HTTP_SEE_OTHER);\r\n    }\r\n}\r\n
+===================================================================
+diff --git a/pogodynka/src/Controller/MeasurementController.php b/pogodynka/src/Controller/MeasurementController.php
+--- a/pogodynka/src/Controller/MeasurementController.php	
++++ b/pogodynka/src/Controller/MeasurementController.php	
+@@ -16,6 +16,7 @@
+ class MeasurementController extends AbstractController
+ {
+     #[Route('/', name: 'app_measurement_index', methods: ['GET'])]
++    #[IsGranted('ROLE_MEASUREMENT_INDEX')]
+     public function index(MeasurementRepository $measurementRepository): Response
+     {
+         return $this->render('measurement/index.html.twig', [
+@@ -24,6 +25,7 @@
+     }
+ 
+     #[Route('/new', name: 'app_measurement_new', methods: ['GET', 'POST'])]
++    #[IsGranted('ROLE_MEASUREMENT_NEW')]
+     public function new(Request $request, EntityManagerInterface $entityManager): Response
+     {
+         $measurement = new Measurement();
+@@ -44,6 +46,7 @@
+     }
+ 
+     #[Route('/{id}', name: 'app_measurement_show', methods: ['GET'])]
++    #[IsGranted('ROLE_MEASUREMENT_SHOW')]
+     public function show(Measurement $measurement): Response
+     {
+         return $this->render('measurement/show.html.twig', [
+@@ -52,6 +55,7 @@
+     }
+ 
+     #[Route('/{id}/edit', name: 'app_measurement_edit', methods: ['GET', 'POST'])]
++    #[IsGranted('ROLE_MEASUREMENT_EDIT')]
+     public function edit(Request $request, Measurement $measurement, EntityManagerInterface $entityManager): Response
+     {
+         $form = $this->createForm(MeasurementType::class, $measurement,['validation_groups' => "edit",]);
+@@ -70,6 +74,7 @@
+     }
+ 
+     #[Route('/{id}', name: 'app_measurement_delete', methods: ['POST'])]
++    #[IsGranted('ROLE_MEASUREMENT_DELETE')]
+     public function delete(Request $request, Measurement $measurement, EntityManagerInterface $entityManager): Response
+     {
+         if ($this->isCsrfTokenValid('delete'.$measurement->getId(), $request->request->get('_token'))) {
+Index: pogodynka/src/Controller/LocationController.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?php\r\n\r\nnamespace App\\Controller;\r\n\r\nuse App\\Entity\\Location;\r\nuse App\\Form\\LocationType;\r\nuse App\\Repository\\LocationRepository;\r\nuse Doctrine\\ORM\\EntityManagerInterface;\r\nuse Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController;\r\nuse Symfony\\Component\\HttpFoundation\\Request;\r\nuse Symfony\\Component\\HttpFoundation\\Response;\r\nuse Symfony\\Component\\Routing\\Annotation\\Route;\r\n\r\n#[Route('/location')]\r\nclass LocationController extends AbstractController\r\n{\r\n    #[Route('/', name: 'app_location_index', methods: ['GET'])]\r\n    public function index(LocationRepository $locationRepository): Response\r\n    {\r\n        return $this->render('location/index.html.twig', [\r\n            'locations' => $locationRepository->findAll(),\r\n        ]);\r\n    }\r\n\r\n    #[Route('/new', name: 'app_location_new', methods: ['GET', 'POST'])]\r\n    public function new(Request $request, EntityManagerInterface $entityManager): Response\r\n    {\r\n        $location = new Location();\r\n        $form = $this->createForm(LocationType::class, $location, ['validation_groups' => \"create\",]);\r\n        $form->handleRequest($request);\r\n\r\n        if ($form->isSubmitted() && $form->isValid()) {\r\n            $entityManager->persist($location);\r\n            $entityManager->flush();\r\n\r\n            return $this->redirectToRoute('app_location_index', [], Response::HTTP_SEE_OTHER);\r\n        }\r\n\r\n        return $this->render('location/new.html.twig', [\r\n            'location' => $location,\r\n            'form' => $form,\r\n        ]);\r\n    }\r\n\r\n    #[Route('/{id}', name: 'app_location_show', methods: ['GET'])]\r\n    public function show(Location $location): Response\r\n    {\r\n        return $this->render('location/show.html.twig', [\r\n            'location' => $location,\r\n        ]);\r\n    }\r\n\r\n    #[Route('/{id}/edit', name: 'app_location_edit', methods: ['GET', 'POST'])]\r\n    public function edit(Request $request, Location $location, EntityManagerInterface $entityManager): Response\r\n    {\r\n        $form = $this->createForm(LocationType::class, $location,['validation_groups' => \"edit\",]);\r\n        $form->handleRequest($request);\r\n\r\n        if ($form->isSubmitted() && $form->isValid()) {\r\n            $entityManager->flush();\r\n\r\n            return $this->redirectToRoute('app_location_index', [], Response::HTTP_SEE_OTHER);\r\n        }\r\n\r\n        return $this->render('location/edit.html.twig', [\r\n            'location' => $location,\r\n            'form' => $form,\r\n        ]);\r\n    }\r\n\r\n    #[Route('/{id}', name: 'app_location_delete', methods: ['POST'])]\r\n    public function delete(Request $request, Location $location, EntityManagerInterface $entityManager): Response\r\n    {\r\n        if ($this->isCsrfTokenValid('delete'.$location->getId(), $request->request->get('_token'))) {\r\n            $entityManager->remove($location);\r\n            $entityManager->flush();\r\n        }\r\n\r\n        return $this->redirectToRoute('app_location_index', [], Response::HTTP_SEE_OTHER);\r\n    }\r\n}\r\n
+===================================================================
+diff --git a/pogodynka/src/Controller/LocationController.php b/pogodynka/src/Controller/LocationController.php
+--- a/pogodynka/src/Controller/LocationController.php	
++++ b/pogodynka/src/Controller/LocationController.php	
+@@ -10,19 +10,26 @@
+ use Symfony\Component\HttpFoundation\Request;
+ use Symfony\Component\HttpFoundation\Response;
+ use Symfony\Component\Routing\Annotation\Route;
++use Symfony\Component\Security\Http\Attribute\IsGranted;
++
++
+ 
+ #[Route('/location')]
++
+ class LocationController extends AbstractController
+ {
+     #[Route('/', name: 'app_location_index', methods: ['GET'])]
++    #[IsGranted('ROLE_LOCATION_INDEX')]
+     public function index(LocationRepository $locationRepository): Response
+     {
+         return $this->render('location/index.html.twig', [
+             'locations' => $locationRepository->findAll(),
+         ]);
++
+     }
+ 
+     #[Route('/new', name: 'app_location_new', methods: ['GET', 'POST'])]
++    #[IsGranted('ROLE_LOCATION_NEW')]
+     public function new(Request $request, EntityManagerInterface $entityManager): Response
+     {
+         $location = new Location();
+@@ -43,6 +50,7 @@
+     }
+ 
+     #[Route('/{id}', name: 'app_location_show', methods: ['GET'])]
++    #[IsGranted('ROLE_LOCATION_SHOW')]
+     public function show(Location $location): Response
+     {
+         return $this->render('location/show.html.twig', [
+@@ -51,6 +59,7 @@
+     }
+ 
+     #[Route('/{id}/edit', name: 'app_location_edit', methods: ['GET', 'POST'])]
++    #[IsGranted('ROLE_LOCATION_EDIT')]
+     public function edit(Request $request, Location $location, EntityManagerInterface $entityManager): Response
+     {
+         $form = $this->createForm(LocationType::class, $location,['validation_groups' => "edit",]);
+@@ -69,6 +78,7 @@
+     }
+ 
+     #[Route('/{id}', name: 'app_location_delete', methods: ['POST'])]
++    #[IsGranted('ROLE_LOCATION_DELETE')]
+     public function delete(Request $request, Location $location, EntityManagerInterface $entityManager): Response
+     {
+         if ($this->isCsrfTokenValid('delete'.$location->getId(), $request->request->get('_token'))) {
+Index: pogodynka/templates/measurement/index.html.twig
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>{% extends \"base.html.twig\" %}\r\n\r\n{% block title %}Measurement index{% endblock %}\r\n\r\n{% block body %}\r\n    <h1>Measurement index</h1>\r\n\r\n    <table class=\"table\">\r\n        <thead>\r\n        <tr>\r\n            <th>Id</th>\r\n            <th>Date</th>\r\n            <th>Celsius</th>\r\n{#            <th>Pressure</th>#}\r\n{#            <th>Rain</th>#}\r\n            <th>actions</th>\r\n        </tr>\r\n        </thead>\r\n        <tbody>\r\n        {% for measurement in measurements %}\r\n            <tr>\r\n                <td>{{ measurement.id }}</td>\r\n                <td>{{ measurement.date ? measurement.date|date('Y-m-d') : '' }}</td>\r\n                <td>{{ measurement.celsius }}</td>\r\n{#                <td>{{ measurement.pressure }}</td>#}\r\n{#                <td>{{ measurement.rain }}</td>#}\r\n                <td>\r\n                    <a href=\"{{ path('app_measurement_show', {'id': measurement.id}) }}\">show</a>\r\n                    <a href=\"{{ path('app_measurement_edit', {'id': measurement.id}) }}\">edit</a>\r\n                </td>\r\n            </tr>\r\n        {% else %}\r\n            <tr>\r\n                <td colspan=\"6\">no records found</td>\r\n            </tr>\r\n        {% endfor %}\r\n        </tbody>\r\n    </table>\r\n\r\n    <a href=\"{{ path('app_measurement_new') }}\">Create new</a>\r\n{% endblock %}\r\n
+===================================================================
+diff --git a/pogodynka/templates/measurement/index.html.twig b/pogodynka/templates/measurement/index.html.twig
+--- a/pogodynka/templates/measurement/index.html.twig	
++++ b/pogodynka/templates/measurement/index.html.twig	
+@@ -25,8 +25,12 @@
+ {#                <td>{{ measurement.pressure }}</td>#}
+ {#                <td>{{ measurement.rain }}</td>#}
+                 <td>
+-                    <a href="{{ path('app_measurement_show', {'id': measurement.id}) }}">show</a>
+-                    <a href="{{ path('app_measurement_edit', {'id': measurement.id}) }}">edit</a>
++                    {% if is_granted('ROLE_MEASUREMENT_SHOW') %}
++                        <a href="{{ path('app_measurement_show', {'id': measurement.id}) }}">show</a>
++                    {% endif %}
++                    {% if is_granted('ROLE_MEASUREMENT_EDIT') %}
++                        <a href="{{ path('app_measurement_edit', {'id': measurement.id}) }}">edit</a>
++                    {% endif %}
+                 </td>
+             </tr>
+         {% else %}
+@@ -36,6 +40,8 @@
+         {% endfor %}
+         </tbody>
+     </table>
+-
+-    <a href="{{ path('app_measurement_new') }}">Create new</a>
++    {% if is_granted('ROLE_MEASUREMENT_NEW') %}
++        <a href="{{ path('app_measurement_new') }}">Create new</a>
++    {% endif %}
++
+ {% endblock %}
+Index: pogodynka/templates/location/index.html.twig
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>{% extends 'base.html.twig' %}\r\n\r\n{% block title %}Location index{% endblock %}\r\n\r\n{% block body %}\r\n    <h1>Location index</h1>\r\n\r\n    <table class=\"table\">\r\n        <thead>\r\n            <tr>\r\n                <th>Id</th>\r\n                <th>City</th>\r\n                <th>Country</th>\r\n                <th>Latitude</th>\r\n                <th>Longitude</th>\r\n                <th>actions</th>\r\n            </tr>\r\n        </thead>\r\n        <tbody>\r\n        {% for location in locations %}\r\n            <tr>\r\n                <td>{{ location.id }}</td>\r\n                <td>{{ location.city }}</td>\r\n                <td>{{ location.country }}</td>\r\n                <td>{{ location.latitude }}</td>\r\n                <td>{{ location.longitude }}</td>\r\n                <td>\r\n                    <a href=\"{{ path('app_location_show', {'id': location.id}) }}\">show</a>\r\n                    <a href=\"{{ path('app_location_edit', {'id': location.id}) }}\">edit</a>\r\n                </td>\r\n            </tr>\r\n        {% else %}\r\n            <tr>\r\n                <td colspan=\"6\">no records found</td>\r\n            </tr>\r\n        {% endfor %}\r\n        </tbody>\r\n    </table>\r\n\r\n    <a href=\"{{ path('app_location_new') }}\">Create new</a>\r\n{% endblock %}\r\n
+===================================================================
+diff --git a/pogodynka/templates/location/index.html.twig b/pogodynka/templates/location/index.html.twig
+--- a/pogodynka/templates/location/index.html.twig	
++++ b/pogodynka/templates/location/index.html.twig	
+@@ -25,8 +25,12 @@
+                 <td>{{ location.latitude }}</td>
+                 <td>{{ location.longitude }}</td>
+                 <td>
+-                    <a href="{{ path('app_location_show', {'id': location.id}) }}">show</a>
+-                    <a href="{{ path('app_location_edit', {'id': location.id}) }}">edit</a>
++                    {% if is_granted('ROLE_LOCATION_SHOW') %}
++                        <a href="{{ path('app_location_show', {'id': location.id}) }}">show</a>
++                    {% endif %}
++                    {% if is_granted('ROLE_LOCATION_EDIT') %}
++                        <a href="{{ path('app_location_edit', {'id': location.id}) }}">edit</a>
++                    {% endif %}
+                 </td>
+             </tr>
+         {% else %}
+@@ -37,5 +41,8 @@
+         </tbody>
+     </table>
+ 
+-    <a href="{{ path('app_location_new') }}">Create new</a>
++    {% if is_granted('ROLE_LOCATION_NEW') %}
++        <a href="{{ path('app_location_new') }}">Create new</a>
++    {% endif %}
++
+ {% endblock %}
