@@ -4,15 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="68824601-22c6-48ff-a460-10fd163c4763" name="Changes" comment="After lab-D">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_15_11_2023_20_20_[Changes]1/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_15_11_2023_20_20__Changes_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/php-8.2.10-nts-Win32-vs16-x64/php.ini" beforeDir="false" afterPath="$PROJECT_DIR$/php-8.2.10-nts-Win32-vs16-x64/php.ini" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pogodynka/src/Command/WeatherCityCommand.php" beforeDir="false" afterPath="$PROJECT_DIR$/pogodynka/src/Command/WeatherCityCommand.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pogodynka/src/Controller/WeatherController.php" beforeDir="false" afterPath="$PROJECT_DIR$/pogodynka/src/Controller/WeatherController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pogodynka/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/pogodynka/templates/base.html.twig" afterDir="false" />
-    </list>
+    <list default="true" id="68824601-22c6-48ff-a460-10fd163c4763" name="Changes" comment="After lab-D" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -217,7 +209,7 @@
       <workItem from="1700678350919" duration="634000" />
       <workItem from="1700679780647" duration="1076000" />
       <workItem from="1700680878266" duration="1331000" />
-      <workItem from="1700686526455" duration="2542000" />
+      <workItem from="1700686526455" duration="2949000" />
     </task>
     <task id="LOCAL-00001" summary="After lab-D">
       <option name="closed" value="true" />
@@ -235,7 +227,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700077286789</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="After lab-D">
+      <option name="closed" value="true" />
+      <created>1700689093210</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1700689093210</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
